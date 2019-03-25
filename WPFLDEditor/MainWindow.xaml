@@ -4,9 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLDEditor"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="LDEditor" Height="450" Width="800" Topmost="True">
     <Grid>
-        
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <GridSplitter Grid.Row="1" ShowsPreview="False" Height ="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+        <DataGrid Grid.Row="0" x:Name="TabVariable" AutoGenerateColumns="True" ItemsSource="{DynamicResource ResourceKey=variable}" HorizontalScrollBarVisibility="Visible" SelectionMode="Single" AreRowDetailsFrozen="True" Grid.ColumnSpan="2">
+            <DataGrid.Resources >
+                <col:ArrayList x:Key="variable">
+                    <local:variable Number="1" Name="I1" Type="BOOL" Comment="Первая переменная"/>
+                    <local:variable Number="2" Name="O1" Type="BOOL" Comment="Вторая переменная"/>
+                </col:ArrayList>
+            </DataGrid.Resources>
+        </DataGrid>
+        <ListBox Grid.Row="2" Name="Editor" AllowDrop="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            
+        </ListBox>
     </Grid>
 </Window>

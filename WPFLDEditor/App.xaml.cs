@@ -13,5 +13,14 @@ namespace WPFLDEditor
     /// </summary>
     public partial class App : Application
     {
+
     }
+    public class variable
+    {
+        public int Number { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public string Comment { get; set; }
+    }
+
 }
