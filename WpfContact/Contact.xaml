@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="WPFNetwork.Contact"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFNetwork"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100" Background="#FFB4B4B4" AutomationProperties.Name="Contact" SnapsToDevicePixels="True" Focusable="True" AllowDrop="True" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+    <Grid x:Name="ContactGrid" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Line Grid.Column="0" Grid.Row="0" X1="0" Y1="50" X2="30" Y2="50" Fill="Black" StrokeThickness="3" Stroke="Black" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        <Line Grid.Column="0" Grid.Row="0" X1="100" Y1="50" X2="70" Y2="50" Fill="Black" StrokeThickness="3" Stroke="Black" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        <Line X1="30" Y1="25" X2="30" Y2="75" Fill="Black" Stroke="Black" StrokeThickness="3" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+        <Line X1="70" Y1="25" X2="70" Y2="75" Fill="Black" Stroke="Black" StrokeThickness="3" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+
+    </Grid>
+
+
+
+</UserControl>

@@ -1,4 +1,4 @@
-﻿<Window x:Class="WPFLDEditor.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,17 +6,20 @@
         xmlns:local="clr-namespace:WPFLDEditor"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:WPFNetwork="clr-namespace:WPFNetwork;assembly=WPFNetwork" x:Class="WPFLDEditor.MainWindow"
         mc:Ignorable="d"
-        Title="LDEditor" Height="450" Width="800" Topmost="True">
+        Title="LDEditor" Height="auto" Width="1070" Topmost="True">
     <Grid>
         <Grid.RowDefinitions >
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+
 
         </Grid.RowDefinitions>
         <GridSplitter Grid.Row="1" ShowsPreview="False" Height ="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
-        <DataGrid Grid.Row="0" x:Name="TabVariable" AutoGenerateColumns="True" ItemsSource="{DynamicResource ResourceKey=variable}" HorizontalScrollBarVisibility="Visible" SelectionMode="Single" AreRowDetailsFrozen="True" Grid.ColumnSpan="2">
+        <DataGrid Grid.Row="0" x:Name="TabVariable" ItemsSource="{DynamicResource ResourceKey=variable}" HorizontalScrollBarVisibility="Visible" SelectionMode="Single" AreRowDetailsFrozen="True" Grid.ColumnSpan="2">
             <DataGrid.Resources >
                 <col:ArrayList x:Key="variable">
                     <local:variable Number="1" Name="I1" Type="BOOL" Comment="Первая переменная"/>
@@ -24,8 +27,32 @@
                 </col:ArrayList>
             </DataGrid.Resources>
         </DataGrid>
-        <ListBox Grid.Row="2" Name="Editor" AllowDrop="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            
+        <ListBox Grid.Row="2" Name="EditorLD">
+            <ListBoxItem IsSelected="True" >
+                <WPFNetwork:NetworkControl Height="100" Width="auto" VerticalAlignment="Top" />
+
+            </ListBoxItem>
+
         </ListBox>
+
+        <Grid Grid.Row="3" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Networkbutton" Grid.Column="0" Content="Новая сеть" Click="Networkbutton_Click"/>
+            <Button x:Name="NewContact" Grid.Column="1" Content="Новый контакт" Click="NewContact_Click" />
+            <Button Content="1" Grid.Column="2"/>
+            <Button Content="2" Grid.Column="3"/>
+            <Button Content="3" Grid.Column="4"/>
+
+
+
+        </Grid>
+
+
     </Grid>
 </Window>

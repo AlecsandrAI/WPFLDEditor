@@ -22,5 +22,15 @@ namespace WPFLDEditor
         public string Type { get; set; }
         public string Comment { get; set; }
     }
+    public class EditorLD
+    {
+        public int NumberNet { get; set; }
+        public int num { get; set; }
+    }
+    public class Ramazan
+    {
+        public string Stroka { get; set; }
+
+    }
 
 }

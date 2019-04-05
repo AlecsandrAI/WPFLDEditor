@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WPFNetwork;
+
 
 namespace WPFLDEditor
 {
@@ -20,6 +10,7 @@ namespace WPFLDEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +21,28 @@ namespace WPFLDEditor
             public string Name { get; set; }
             public string Type { get; set; }
             public string Comment { get; set; }
+
+        }
+
+        public void Networkbutton_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem item = new ListBoxItem();
+            EditorLD.Items.Add(item);
+#pragma warning disable CS0436 // Тип конфликтует с импортированным типом
+            NetworkControl item1 = new NetworkControl();
+#pragma warning restore CS0436 // Тип конфликтует с импортированным типом
+            EditorLD.Items.Add(item1);
+
+        }
+
+        public void NewContact_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem item = new ListBoxItem();
+#pragma warning disable CS0436 // Тип конфликтует с импортированным типом
+            Contact item1 = new Contact();
+#pragma warning restore CS0436 // Тип конфликтует с импортированным типом
+            EditorLD.Items.Add(item);
+            EditorLD.Items.Add(item1);
 
         }
     }
